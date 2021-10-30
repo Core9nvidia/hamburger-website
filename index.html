@@ -5,42 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-image: url('../bg.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-color: rgb(31, 30, 30);
+            opacity: 0.8;
+            margin: 0;
+            padding: 0;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+        }
+        
+        .topnav #myLinks {
+            display: none;
+        }
+        
+        .topnav a {
+            color: rgb(52, 245, 13);
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
+        }
+        
+        .topnav a.icon {
+            background: #f5f2f2;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 10px;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .active {
+            background-color: #1a4938;
+            color: rgb(255, 254, 254);
+        }
+
+        #logo{
+            text-align: left;
+            font-size: larger;
+        }
+        div {
+            font-style: italic;
+            text-align: center;
+        }
+
+        h1{
+            color: rgb(255, 255, 0);
+            font-size: 3em;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            padding-top: 100px;
+        }
+        p{
+            font-size: large;
+            padding: 0px 10px 0px 10px;
+            position: relative;
+        }
+        span{
+            color: yellowgreen;
+            font-size: larger;
+            background-color: rgb(85, 77, 77);
+        }
+
+    </style>
 </head>
 <body>
-    <nav role="navigation">
-        <div id="menuToggle">
-          <!--
-          A fake / hidden checkbox is used as click reciever,
-          so you can use the :checked selector on it.
-          -->
-          <input type="checkbox" />
-          
-          <!--
-          Some spans to act as a hamburger.
-          
-          They are acting like a real hamburger,
-          not that McDonalds stuff.
-          -->
-          <span></span>
-          <span></span>
-          <span></span>
-          
-          <!--
-          Too bad the menu has to be inside of the button
-          but hey, it's pure CSS magic.
-          -->
-          <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li>Contact</li></a>
-            <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-          </ul>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="#home" class="active" id="logo">Website</a>
+        <div id="myLinks">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
         </div>
-      </nav>
-      
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
     <div class="align-bottom" id="con">
         <h1>Welcome</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -50,5 +105,17 @@
         </p>
         <span>Read more</span>
     </div>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+    </script>
+    
 </body>
 </html>
